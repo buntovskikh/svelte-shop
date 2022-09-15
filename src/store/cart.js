@@ -13,6 +13,10 @@ export const totalPrice = derived(
             total += item.quantity * $products[item.id].price
         })
 
+        if (total < 0) {
+            return 0;
+        }
+
         return total;
     }
 );

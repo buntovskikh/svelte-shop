@@ -34,7 +34,7 @@
     }
 
     $: $cart.map((item, index) => {
-        if (item.quantity === 0) {
+        if (item.quantity <= 0) {
             $cart.splice(index, 1)
         }
     })
