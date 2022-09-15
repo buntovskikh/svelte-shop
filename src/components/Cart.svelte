@@ -12,7 +12,7 @@
     } from 'sveltestrap';
 
     export let isOpen;
-    const toggle = () => isOpen = false;
+    const toggle = () => isOpen = !isOpen;
 
 
     const deleteAll = () => {
@@ -39,6 +39,7 @@
             $cart.splice(index, 1)
         }
     })
+    $: console.log(isOpen)
 </script>
 
 <Modal isOpen={isOpen} {toggle} scrollable>
