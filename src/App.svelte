@@ -18,8 +18,8 @@
         <Nav class="ms-auto" navbar>
             <Button on:click={toggle} class="bg-success text-dark">
                 {$totalPrice} Kč
-                <Cart {isOpen}/>
             </Button>
+            <Cart {isOpen}/>
         </Nav>
     </Navbar>
 </Container>
