@@ -11,9 +11,8 @@
         Input
     } from 'sveltestrap';
 
-    export let isOpen;
-    const toggle = () => isOpen = !isOpen;
-
+    let isOpen = false;
+    const toggle = () => (isOpen = !isOpen);
 
     const deleteAll = () => {
         cart.set([])
@@ -39,8 +38,11 @@
             $cart.splice(index, 1)
         }
     })
-    $: console.log(isOpen)
 </script>
+
+<Button on:click={toggle} class="bg-success text-dark">
+    {$totalPrice} Kč
+</Button>
 
 <Modal isOpen={isOpen} {toggle} scrollable>
     <ModalHeader {toggle}>
